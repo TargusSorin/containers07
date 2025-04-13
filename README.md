@@ -29,12 +29,16 @@ docker-compose up -d
 
 ### Întrebări:
 1) În ce ordine sunt pornite containerele?
+
 Containerele sunt pornite în ordinea în care sunt definite în documentul docker-compose.yml, deci se vor porni în ordinea: frontend, backend, database.
-2) Unde sunt stocate datele bazei de date?
+3) Unde sunt stocate datele bazei de date?
+
 Datele bazei de date sunt stocate în directorul /var/lib/mysql din volumul containerului database.
-3) Cum se numesc containerele proiectului?
+4) Cum se numesc containerele proiectului?
+
 Containerele proiectului se numesc frontend, backend și database.
-4) Trebuie să adăugați încă un fișier app.env cu variabila de mediu APP_VERSION pentru serviciile backend și frontend. Cum se face acest lucru?
+5) Trebuie să adăugați încă un fișier app.env cu variabila de mediu APP_VERSION pentru serviciile backend și frontend. Cum se face acest lucru?
+
 Pentru a adăuga un fișier cu variabila de mediu APP_VERSION creăm fișierul app.env, în directorul rădăcină, cu versiunea aplicației și în fișierul docker-compose.yml la frontend adăugăm env_file cu denumirea fișierului, iar la backend îl adăugăm la env_file sub mysql.env. După aceasta refacem containerele din baza documentului docker-compose.yml.
 
 ### Concluzie:
